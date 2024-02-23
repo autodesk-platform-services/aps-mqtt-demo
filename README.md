@@ -5,7 +5,10 @@
 [![npm](https://img.shields.io/badge/npm-8.11-blue.svg)](https://www.npmjs.com/)
 [![license](https://img.shields.io/:license-mit-green.svg)](https://opensource.org/licenses/MIT)
 
-[Autodesk Platform Services](https://aps.autodesk.com) application built to demonstrate streaming MQTT data in IOT application
+[Autodesk Platform Services](https://aps.autodesk.com) application built to demonstrate streaming MQTT data in IOT application.
+
+
+This sample is built on top of [aps-iot-extensions-demo](https://github.com/autodesk-platform-services/aps-iot-extensions-demo), for context and full explaination please read [this blog](https://aps.autodesk.com/blog/stream-iot-data-mqtt-broker-digital-twin).
 
 
 ## Development
