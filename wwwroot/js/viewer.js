@@ -18,7 +18,7 @@ async function getAccessToken(callback) {
 
 export function initViewer(container,extensions) {
     return new Promise(function (resolve, reject) {
-        Autodesk.Viewing.Initializer({ getAccessToken }, function () {
+        Autodesk.Viewing.Initializer({ env: 'AutodeskProduction2', api: 'streamingV2', getAccessToken }, function () {
             const viewer = new Autodesk.Viewing.GuiViewer3D(container, { extensions });
             viewer.start();
             viewer.setTheme('light-theme');

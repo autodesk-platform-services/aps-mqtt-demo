@@ -38,42 +38,5 @@ IotPanel.prototype.initialize = function()
     this.initializeCloseHandler(this.closer);
     this.container.appendChild(this.closer);
 };
-/*export class IotPanel extends Autodesk.Viewing.UI.DockingPanel{
-    constructor(parentContainer, id, title, content, x, y) {
-        super(parentContainer, id, title);
-        this.content = content;
-        // Autodesk.Viewing.UI.DockingPanel.call(this, parentContainer, id, '');
-
-        // Auto-fit to the content and don't allow resize.  Position at the coordinates given.
-        //
-        this.container.style.height = "auto";
-        this.container.style.width = "auto";
-        this.container.style.resize = "none";
-        this.container.style.left = x + "px";
-        this.container.style.top = y + "px";
-    }
-    initialize() {
-        // Override DockingPanel initialize() to:
-        // - create a standard title bar
-        // - click anywhere on the panel to move
-        // - create a close element at the bottom right
-        //
-        this.title = this.createTitleBar(this.titleLabel || this.container.id);
-        this.container.appendChild(this.title);
-        let content = document.createElement("div");
-        const text = document.createTextNode("Hi there and greetings!");
-        content.appendChild(text);
-        this.container.appendChild(content);
-        // this.container.appendChild(this.content);
-        this.initializeMoveHandlers(this.container);
-
-        this.closer = this.getDocument().createElement("div");
-        this.closer.className = "IotPanelClose";
-        this.closer.textContent = "Close";
-        this.initializeCloseHandler(this.closer);
-        this.container.appendChild(this.closer);
-    }
-};
-*/
 
 

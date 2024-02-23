@@ -13,31 +13,31 @@ const SENSORS = {
 };
 
 const CHANNELS = {
-    'Power': {
-        name: 'Power',
-        description: 'External temperature in degrees Celsius.',
+    'pressure': {
+        name: 'pressure',
+        description: 'Fluid pressure',
         type: 'double',
-        unit: 'W',
+        unit: 'Pa',
         min: 0,
         max: 500,
         color:'#4287f5'
     },
-    'Torque': {
-        name: 'Torque',
-        description: 'Level of carbon dioxide.',
+    'flowrate': {
+        name: 'flowrate',
+        description: 'Fluid flowrate',
         type: 'double',
-        unit: 'Nm',
+        unit: 'm3/s',
         min: 0,
-        max: 200,
+        max: 1000,
         color:'#1e6910'
     },
-    'Speed': {
-        name: 'Speed',
-        description: 'Level of carbon dioxide.',
+    'temperature': {
+        name: 'temperature',
+        description: 'Fluid temperature',
         type: 'double',
-        unit: 'm/s',
+        unit: 'C',
         min: 0,
-        max: 2000,
+        max: 200,
         color:'#cf681f'
     }
 };
@@ -56,9 +56,9 @@ async function getSamples(timerange, resolution = 32) {
         timestamps: generateTimestamps(timerange.start, timerange.end, resolution),
         data: {
             'sensor-1': {
-                'Power': generateRandomValues(0, 500, resolution, 1.0),
-                'Torque': generateRandomValues(0, 200, resolution, 1.0),
-                'Speed': generateRandomValues(0, 2000, resolution, 5.0)
+                'pressure': generateRandomValues(0, 500, resolution, 1.0),
+                'flowrate': generateRandomValues(0, 1000, resolution, 1.0),
+                'temperature': generateRandomValues(0, 200, resolution, 5.0)
             }
         }
     };

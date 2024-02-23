@@ -1,4 +1,4 @@
 const socket = io();
-socket.on('chat', message => {
+socket.on('mqttdata', message => {
   console.log('From server: ', message)
 })

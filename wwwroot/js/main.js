@@ -46,15 +46,14 @@ viewer.addEventListener(Autodesk.Viewing.GEOMETRY_LOADED_EVENT, async () => {
 //   onDataChanged(info);
 
 async function onDataChanged(info){
-    console.log(info.Power)
       dataView._timestamps = info.timestamps.map(str => new Date(str));
-      dataView._data['sensor-1'].Power = info.Power
-      dataView._data['sensor-1'].Torque = info.Torque
-      dataView._data['sensor-1'].Speed = info.Speed
+      dataView._data['sensor-1'].pressure = info.pressure
+      dataView._data['sensor-1'].flowrate = info.flowrate
+      dataView._data['sensor-1'].temperature = info.temperature
       extensions.forEach(ext => ext.dataView = dataView);
   }
   
-  socket.on('chat', message => {
+  socket.on('mqttdata', message => {
     // console.log('From server: ', message)
     onDataChanged(message)
   })
@@ -82,4 +81,4 @@ async function onDataChanged(info){
 });
 
 
-// let torque_panel = IotPanel(vc,'torque','Torque Data','content',50,50)
+// let flowrate_panel = IotPanel(vc,'flowrate','flowrate Data','content',50,50)

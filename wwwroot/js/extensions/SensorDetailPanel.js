@@ -52,7 +52,7 @@ export class SensorDetailPanel extends Autodesk.Viewing.UI.DockingPanel {
         return new Chart(canvas.getContext('2d'), {
             type: 'line',
             data: {
-                labels: timestamps.map(timestamp => timestamp.toLocaleDateString()),
+                labels: timestamps.map(timestamp => timestamp.toLocaleTimeString()),
                 datasets: [{
                         label: title,
                         data: values,
@@ -67,6 +67,9 @@ export class SensorDetailPanel extends Autodesk.Viewing.UI.DockingPanel {
                         y: { min, max }
                     }
                 }
+            },
+            options: {
+                animation: false
             }
         });
     }
